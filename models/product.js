@@ -17,10 +17,10 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    size: {
+    category: {
         type: String,
-        enum: ["S", "M", "L", "XL", "XXL"],
-    },
+        enum: ['Baju', 'Celana', 'Aksesoris', 'Jaket'],
+    }
 });
 
 const Product = mongoose.model("Product", productSchema);
