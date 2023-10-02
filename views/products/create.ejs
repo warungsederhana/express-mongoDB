@@ -7,7 +7,10 @@
     </head>
     <body>
         <h1>Add a Product</h1>
-        <form action="/products" method="post">
+        <a href="/garments/<%= garment_id %>">Back to Garment</a>
+        <br /><br /><br />
+
+        <form action="/garments/<%= garment_id %>/products" method="post">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" />
 
@@ -31,5 +34,8 @@
 
             <button type="submit">Submit</button>
         </form>
+        <br /><br />
+
+        <a href="/products">All Products</a>
     </body>
 </html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Detail Garment</title>
+    </head>
+    <body>
+        <h1><%= garment.name %></h1>
+        <a href="/garments">Back to Garments</a>
+
+        <ul>
+            <li>Location: <%= garment.location %></li>
+            <li>Contact: <%= garment.contact %></li>
+        </ul>
+
+        <a href="/garments/<%= garment._id %>/edit">Edit Garment</a>
+        <a href="/garments/<%= garment._id %>/products/create">Add Product</a>
+
+        <form action="/garments/<%= garment._id %>?_method=DELETE" method="post">
+            <button type="submit">Delete Garment</button>
+        </form>
+
+        <br />
+
+        <hr />
+        <h2>Products:</h2>
+        <% if (garment.products) { %>
+        <ul>
+            <% garment.products.forEach(product => { %>
+            <li>
+                <a href="/products/<%= product._id %>"
+                    ><%= product.name %> - <%= product.brand %> - <%= product.color %> - <%=
+                    product.price %> - <%= product.category %></a
+                >
+            </li>
+            <% }) %>
+        </ul>
+        <% } else { %>
+        <p>No products found.</p>
+        <% } %>
+    </body>
+</html>

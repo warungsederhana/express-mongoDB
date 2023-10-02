@@ -7,7 +7,8 @@
     </head>
     <body>
         <h1><%= product.name %></h1>
-        <a href="/products">Back to Products</a>
+        <a href="/products">All Products</a>
+
         <ul>
             <li>Brand: <%= product.brand %></li>
             <li>Warna: <%= product.color %></li>
@@ -22,5 +23,18 @@
         <form action="/products/<%= product._id %>?_method=DELETE" method="post">
             <button type="submit">Delete Product</button>
         </form>
+
+        <br /><br /><br />
+
+        <hr />
+
+        <h2>Garment:</h2>
+        <ul>
+            <li>
+                <h3>
+                    <a href="/garments/<%= product.garment._id %>"><%= product.garment.name %></a>
+                </h3>
+            </li>
+        </ul>
     </body>
 </html>
